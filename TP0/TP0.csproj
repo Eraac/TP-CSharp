@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -33,6 +33,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Player.cs" />
+    <Compile Include="Entity\Team.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Gameplay\Pool.cs" />
+    <Compile Include="Gameplay\Tournament.cs" />
+    <Compile Include="Loader\Factory\ArmorFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stuff\TypeStats.cs" />
@@ -48,16 +54,8 @@
     <Compile Include="Debuff\Trapped.cs" />
     <Compile Include="Debuff\Dead.cs" />
     <Compile Include="Stuff\TypeStuff.cs" />
-    <Compile Include="Stuff\CheckIfGladiatorCanEquip.cs" />
+    <Compile Include="Utility\CheckIfGladiatorCanEquip.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="Entity\" />
-    <Folder Include="Game\" />
-    <Folder Include="Loader\" />
-    <Folder Include="Debuff\" />
-    <Folder Include="Stuff\" />
-    <Folder Include="Stuff\Weapon\" />
-    <Folder Include="Stuff\Armor\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
