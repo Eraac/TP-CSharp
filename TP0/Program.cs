@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace TP0
+﻿namespace TP0
 {
 	class MainClass
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello World!");
+            Game game = new Game();
+            game.run();
 		}
 	}
 }
