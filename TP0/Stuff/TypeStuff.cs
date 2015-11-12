@@ -4,8 +4,9 @@ namespace TP0.Stuff
 {
 	public enum TypeStuff
 	{
-		ARMOR = 0,
-		WEAPON = 1
+        NONE = 0,
+		ARMOR = 1,
+		WEAPON = 2
 	}
 }
 
