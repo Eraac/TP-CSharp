@@ -1,4 +1,4 @@
-﻿using System;
+﻿using TP0.Utility;
 using TP0.Stuff;
 using TP0.Debuff;
 
@@ -51,7 +51,8 @@ namespace TP0.Entity
 
 		public uint chanceHit (SlotStuff slotStuff)
 		{
-			return this._stuff.getTotalValueOfStatsForOnePiece(TypeStats.CHANCE_HIT, slotStuff);
+            uint chance = this._stuff.getTotalValueOfStatsForOnePiece(TypeStats.CHANCE_HIT, slotStuff);
+            return this._debuff.decreaseAttack(chance);
 		}
 
 		public uint chanceParry (SlotStuff slotStuff)
@@ -59,7 +60,7 @@ namespace TP0.Entity
 			return this._stuff.getTotalValueOfStatsForOnePiece(TypeStats.CHANCE_PARRY, slotStuff);
 		}
 
-		public double pourcentageVictory ()
+		public float pourcentageVictory ()
 		{
 			return (this._nbMatchWon / this._nbMatchPlayed) * 100;
 		}
