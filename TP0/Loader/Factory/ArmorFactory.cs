@@ -21,7 +21,7 @@ namespace TP0.Loader.Factory
                     return this.createHelmet();
 
                 default:
-                    return new Item("Unknow", 0, Stuff.TypeStuff.NONE);
+                    return null;
             }
         }
 
