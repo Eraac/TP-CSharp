@@ -30,6 +30,10 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +43,8 @@
     <Compile Include="Gameplay\Pool.cs" />
     <Compile Include="Gameplay\Tournament.cs" />
     <Compile Include="Loader\Factory\ArmorFactory.cs" />
+    <Compile Include="Loader\Factory\WeaponFactory.cs" />
+    <Compile Include="Loader\LoadPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stuff\TypeStats.cs" />
@@ -55,7 +61,30 @@
     <Compile Include="Debuff\Dead.cs" />
     <Compile Include="Stuff\TypeStuff.cs" />
     <Compile Include="Utility\CheckIfGladiatorCanEquip.cs" />
+    <Compile Include="Utility\JsonReader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Assets\Gladiator\glad1.json" />
+    <None Include="Assets\Gladiator\glad10.json" />
+    <None Include="Assets\Gladiator\glad11.json" />
+    <None Include="Assets\Gladiator\glad12.json" />
+    <None Include="Assets\Gladiator\glad2.json" />
+    <None Include="Assets\Gladiator\glad3.json" />
+    <None Include="Assets\Gladiator\glad4.json" />
+    <None Include="Assets\Gladiator\glad5.json" />
+    <None Include="Assets\Gladiator\glad6.json" />
+    <None Include="Assets\Gladiator\glad7.json" />
+    <None Include="Assets\Gladiator\glad8.json" />
+    <None Include="Assets\Gladiator\glad9.json" />
+    <None Include="Assets\Player\david.json" />
+    <None Include="Assets\Player\kevin.json" />
+    <None Include="Assets\Player\magali.json" />
+    <None Include="Assets\Player\noemie.json" />
+    <None Include="Assets\Team\team_four.json" />
+    <None Include="Assets\Team\team_one.json" />
+    <None Include="Assets\Team\team_three.json" />
+    <None Include="Assets\Team\team_two.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>
