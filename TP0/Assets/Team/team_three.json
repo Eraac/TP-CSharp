@@ -1,0 +1,11 @@
+{
+    "name": "Team three",
+    "description": "L'équipe three !",
+    "nb_match_played": 8,
+    "nb_match_won": 4,
+    "gladiators": [
+        {"gladiator_name": "glad7"},
+        {"gladiator_name": "glad8"},
+        {"gladiator_name": "glad9"},
+    ]
+}
