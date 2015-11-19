@@ -1,4 +1,6 @@
-﻿namespace TP0
+﻿using System;
+
+namespace TP0
 {
 	class MainClass
 	{
@@ -6,6 +8,8 @@
 		{
             Game game = new Game();
             game.run();
-		}
+
+            Console.Read();
+        }
 	}
 }
