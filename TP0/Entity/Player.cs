@@ -15,20 +15,15 @@ namespace TP0.Entity
         private DateTime _createAt;
         private List<Team> _teams;
 
-        public List<Team> Teams
-        {
-            get
-            {
-                return _teams;
-            }
-        }
+        public string name { get; set; }
+        public string firstname { get; set; }
+        public string player_name { get; set; }
+        public DateTime date_create { get; set; }
+        public List<Team> teams { get; set; }
 
-        public Player(string name, string firstname, string playerName, DateTime createAt = new DateTime())
-        {
-            this._name = name;
-            this._firstname = firstname;
-            this._playerName = playerName;
-            this._createAt = createAt;
+        public Player()
+        {            
+            this._createAt = new DateTime();
             this._teams = new List<Team>();
         }
 
