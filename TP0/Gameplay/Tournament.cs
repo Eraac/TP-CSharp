@@ -20,7 +20,7 @@ namespace TP0.Gameplay
 
             foreach(Player player in this._players)
             {
-                teams.Add(player.Teams[0]); // TODO : Laisser le joueur choisir la team + ajouter assert
+                teams.Add(player.teams[0]); // TODO : ajouter vérification
             }
 
             teams.Sort(compareTeamByVictory);
