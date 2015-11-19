@@ -4,6 +4,6 @@
     "player_name": "Elie",
     "date_create": "",
     "teams": [
-        {"team_name": "team_two"}
+        "team_two"
     ]
 }

@@ -4,8 +4,6 @@
     "nb_match_played": 0,
     "nb_match_won": 0,
     "gladiators": [
-        {"gladiator_name": "glad1"},
-        {"gladiator_name": "glad2"},
-        {"gladiator_name": "glad3"},
+        "glad1", "glad2", "glad3"
     ]
 }
