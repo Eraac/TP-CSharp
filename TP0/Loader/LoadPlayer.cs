@@ -18,13 +18,26 @@ namespace TP0.Loader
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            // Doc. http://www.newtonsoft.com/json/help/html/M_Newtonsoft_Json_Linq_JObject_Property.htm
             JObject jsonObject = JObject.Load(reader);
-            var properties = jsonObject.Property("teams");
 
-            Console.WriteLine(properties.Value);
+            return this.loadPlayer(jsonObject, new Player());
+        }
 
-            return new Player();
+        private Player loadPlayer(JObject jsonObject, Player player)
+        {
+            string name = jsonObject.Property("name").ToString();
+            string firstname = jsonObject.Property("firstname").ToString();
+            string playerName = jsonObject.Property("player_name").ToString();
+            //DateTime createAt = jsonObject.Property("create_at");
+            dynamic teams = jsonObject.Property("teams").ToList()[0];
+
+            LoadTeam loaderTeam = new LoadTeam();
+
+            foreach (string team in teams) {
+                player.addTeam(loaderTeam.loadOne(team));
+            }
+
+            return player;
         }
     }
 
@@ -35,10 +48,10 @@ namespace TP0.Loader
         public List<Player> loadAll()
         {
             List<Player> players = new List<Player>();
-            string[] playersName = new string[1] { "kevin" };
+            string[] playersName = new string[4] { "kevin", "magali", "david", "noemie" };
 
             foreach(string playerName in playersName) {
-                players.Add(loadOne(playerName));
+                players.Add(this.loadOne(playerName));
             }
 
             return players;
