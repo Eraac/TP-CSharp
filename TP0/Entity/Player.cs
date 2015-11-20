@@ -15,11 +15,61 @@ namespace TP0.Entity
         private DateTime _createAt;
         private List<Team> _teams;
 
-        public string name { get; set; }
-        public string firstname { get; set; }
-        public string player_name { get; set; }
-        public DateTime date_create { get; set; }
-        public List<Team> teams { get; set; }
+        public string name
+        {
+            get
+            {
+                return _name;
+            }
+
+            set
+            {
+                _name = value;
+            }
+        }
+        public string firstname
+        {
+            get
+            {
+                return _firstname;
+            }
+
+            set
+            {
+                _firstname = value;
+            }
+        }
+        public string playerName
+        {
+            get
+            {
+                return _playerName;
+            }
+
+            set
+            {
+                _playerName = value;
+            }
+        }
+        public DateTime createAt
+        {
+            get
+            {
+                return _createAt;
+            }
+
+            set
+            {
+                _createAt = value;
+            }
+        }
+        public List<Team> teams
+        {
+            get
+            {
+                return _teams;
+            }
+        }
 
         public Player()
         {            

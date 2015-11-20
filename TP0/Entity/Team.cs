@@ -7,25 +7,75 @@ namespace TP0.Entity
         private const int NB_GLADIATOR_MAX_PER_TEAM = 3;
         private string _name;
         private string _description;
-        private List<Gladiator> _gladiators;
         private uint _nbMatchPlayed;
         private uint _nbMatchWon;
+        private List<Gladiator> _gladiators;
 
+        public string name
+        {
+            get
+            {
+                return _name;
+            }
+
+            set
+            {
+                _name = value;
+            }
+        }
+        public string description
+        {
+            get
+            {
+                return _description;
+            }
+
+            set
+            {
+                _description = value;
+            }
+        }
+        public uint nbMatchPlayed
+        {
+            get
+            {
+                return _nbMatchPlayed;
+            }
+
+            set
+            {
+                _nbMatchPlayed = value;
+            }
+        }
+        public uint nbMatchWon
+        {
+            get
+            {
+                return _nbMatchWon;
+            }
+
+            set
+            {
+                _nbMatchWon = value;
+            }
+        }
         public List<Gladiator> gladiators
         {
             get
             {
                 return _gladiators;
             }
+
+            set
+            {
+                _gladiators = value;
+            }
         }
 
-        public Team(string name, string description, uint nbMatchPlayed = 0, uint nbMatchWon = 0)
+
+        public Team()
         {
-            this._name = name;
-            this._description = description;
             this._gladiators = new List<Gladiator>();
-            this._nbMatchPlayed = nbMatchPlayed;
-            this._nbMatchWon = nbMatchWon;
         }
 
         public float pourcentageVictory()
