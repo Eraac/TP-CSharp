@@ -17,27 +17,27 @@ namespace TP0.Loader
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            JObject jsonObject = JObject.Load(reader);
+		{
+			JObject jsonObject = JObject.Load (reader);
 
-            return this.loadGladiator(jsonObject, new Gladiator());
-        }
+			return this.loadGladiator (jsonObject, new Gladiator ());
+		}
 
-        private Gladiator loadGladiator(JObject jsonObject, Gladiator gladiator)
+       	private Gladiator loadGladiator(JObject jsonObject, Gladiator gladiator)
         {
             gladiator.name = jsonObject.Property("name").ToString();
             gladiator.nbMatchPlayed = uint.Parse(jsonObject.Property("nb_match_played").Value.ToString());
             gladiator.nbMatchWon = uint.Parse(jsonObject.Property("nb_match_won").Value.ToString());
-            dynamic weapons = jsonObject.Property("weapons").ToList();
-            dynamic armors = jsonObject.Property("armors").ToList();
+			List<int> weapons = jsonObject.Property("weapons").ToArray()[0].ToObject<List<int>>();
+			List<int> armors = jsonObject.Property("armors").ToArray()[0].ToObject<List<int>>();
 
-            if (weapons.Contains(0)) {
+			LoadWeapon loaderWeapon = new LoadWeapon();
+			loaderWeapon.loadAll(gladiator, weapons);
 
-            } else {
-                Console.WriteLine("coucou");
-            }
+			LoadArmor loaderArmor = new LoadArmor();
+			loaderArmor.loadAll(gladiator, armors);
 
-            // TODO Stuff
+			// TODO Check if gladiator is valid
 
             return gladiator;
         }
