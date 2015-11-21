@@ -7,9 +7,9 @@ namespace TP0.Loader.Factory
     {
         public WeaponFactory() {}
 
-        public Item getArmor(ListWeapon typeWeapon)
+        public Item getWeapon(ListWeapon weapon)
         {
-            switch(typeWeapon)
+			switch(weapon)
             {
                 case ListWeapon.DAGGER:
                     return this.createDagger();
