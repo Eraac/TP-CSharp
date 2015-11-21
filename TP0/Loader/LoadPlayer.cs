@@ -25,13 +25,15 @@ namespace TP0.Loader
 
         private Player loadPlayer(JObject jsonObject, Player player)
         {
-            string name = jsonObject.Property("name").ToString();
-            string firstname = jsonObject.Property("firstname").ToString();
-            string playerName = jsonObject.Property("player_name").ToString();
-            //DateTime createAt = jsonObject.Property("create_at");
+            player.name = jsonObject.Property("name").ToString();
+            player.firstname = jsonObject.Property("firstname").ToString();
+            player.playerName = jsonObject.Property("player_name").ToString();
+            //player.createAt = jsonObject.Property("create_at"); // TODO
             dynamic teams = jsonObject.Property("teams").ToList()[0];
 
-            LoadTeam loaderTeam = new LoadTeam();
+            Console.WriteLine(teams.GetType());
+
+            LoadTeam loaderTeam = new LoadTeam();            
 
             foreach (string team in teams) {
                 player.addTeam(loaderTeam.loadOne(team));
