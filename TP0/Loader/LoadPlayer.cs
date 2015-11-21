@@ -31,8 +31,6 @@ namespace TP0.Loader
             //player.createAt = jsonObject.Property("create_at"); // TODO
             dynamic teams = jsonObject.Property("teams").ToList()[0];
 
-            Console.WriteLine(teams.GetType());
-
             LoadTeam loaderTeam = new LoadTeam();            
 
             foreach (string team in teams) {
