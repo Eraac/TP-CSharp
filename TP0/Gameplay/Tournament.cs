@@ -39,7 +39,19 @@ namespace TP0.Gameplay
             }
         }
 
-        private static int compareTeamByVictory(Team a, Team b)
+        public void match()
+        {
+            foreach(Pool pool in this._pools)
+            {
+                Team team = pool.match();
+
+                if (null != team) {
+                    team.addVictory();
+                }
+            }
+        }
+
+        private static int compareTeamByVictory(Team a, Team b)        
         {
             float aVictory = a.pourcentageVictory();
             float bVictory = b.pourcentageVictory();

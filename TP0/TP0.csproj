@@ -40,6 +40,7 @@
     <Compile Include="Entity\Player.cs" />
     <Compile Include="Entity\Team.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Gameplay\Duel.cs" />
     <Compile Include="Gameplay\Pool.cs" />
     <Compile Include="Gameplay\Tournament.cs" />
     <Compile Include="Loader\Factory\ArmorFactory.cs" />
