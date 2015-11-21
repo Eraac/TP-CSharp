@@ -57,6 +57,11 @@ namespace TP0.Entity
 
 			return total;
 		}
+
+		public override string ToString ()
+		{
+			return string.Format ("[Item: typeStuff={0}, name={1}, cost={2}]", typeStuff, name, cost);
+		}
 	}
 }
 

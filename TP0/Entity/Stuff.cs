@@ -60,5 +60,17 @@ namespace TP0.Entity
 		{
 			return (this.hasItem(SlotStuff.WEAPON_LEFT_HAND) || this.hasItem(SlotStuff.WEAPON_RIGHT_HAND));
 		}
+
+		public override string ToString ()
+		{
+			string itemString = "";
+
+			foreach (KeyValuePair<SlotStuff, Item> item in this._items) 			
+			{
+				itemString += item.Value.ToString() + " / ";
+			}
+
+			return "[Stuff] : " + itemString;
+		}
 	}
 }

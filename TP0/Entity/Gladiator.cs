@@ -1,6 +1,7 @@
 ﻿using TP0.Utility;
 using TP0.Stuff;
 using TP0.Debuff;
+using System;
 
 namespace TP0.Entity
 {
@@ -61,7 +62,7 @@ namespace TP0.Entity
 		}
 
 		public bool addItem (Item item, SlotStuff slotStuff)
-		{
+		{			
 			CheckIfGladiatorCanEquip check = new CheckIfGladiatorCanEquip();
 
 			if (check.canEquip(this, item, slotStuff)) {
@@ -104,7 +105,7 @@ namespace TP0.Entity
 
         public override string ToString()
         {
-            return "[Gladiator] : " + this._name;
+			return "[Gladiator] : " + this._name + " stuff : " + this._stuff;
         }
     }
 }
