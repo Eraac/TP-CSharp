@@ -16,13 +16,9 @@ namespace TP0
             LoadPlayer loadPlayer = new LoadPlayer();
             List<Player> players = loadPlayer.loadAll();
 
-            // tmp
-            foreach(Player player in players) {
-                Console.WriteLine(player);
-            }            
-
             // 2. Run tournament
             Tournament tournament = new Tournament(players);
+            tournament.selectPools();
         }
     }
 }
