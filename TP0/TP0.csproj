@@ -30,6 +30,7 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -44,6 +45,7 @@
     <Compile Include="Gameplay\Tournament.cs" />
     <Compile Include="Loader\Factory\ArmorFactory.cs" />
     <Compile Include="Loader\Factory\WeaponFactory.cs" />
+    <Compile Include="Loader\LoadGladiator.cs" />
     <Compile Include="Loader\LoadPlayer.cs" />
     <Compile Include="Loader\LoadTeam.cs" />
     <Compile Include="Program.cs" />
