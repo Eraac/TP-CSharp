@@ -3,9 +3,7 @@
     "nb_match_played": 6,
     "nb_match_won": 5,
     "weapons": [
-
+        0, 1
     ],
-    "armors": [
-
-    ]
+    "armors": []
 }
