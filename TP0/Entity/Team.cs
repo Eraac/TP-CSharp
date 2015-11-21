@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TP0.Entity
 {
@@ -112,6 +113,18 @@ namespace TP0.Entity
             this._gladiators.Add(gladiator);
 
             return true;
+        }
+
+        public override string ToString()
+        {
+            String gladString = "";
+
+            foreach (Gladiator gladiator in this._gladiators)
+            {
+                gladString += gladiator.ToString() + " / ";
+            }
+
+            return "[team] : " + this._name + " - " + this._description + " - " + gladString;
         }
     }
 }

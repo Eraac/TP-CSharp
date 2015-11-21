@@ -90,5 +90,16 @@ namespace TP0.Entity
 
             return true;
         }
+
+        public override string ToString()
+        {
+            String teamString = "";            
+
+            foreach(Team team in this._teams) {
+                teamString += team.ToString() + " / ";
+            }
+
+            return "[player] : " + this._name + " - " + this._firstname + " - " + this._playerName + " | teams : " + teamString;
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace TP0
 
             // tmp
             foreach(Player player in players) {
-                Console.WriteLine(player.name);
+                Console.WriteLine(player);
             }            
 
             // 2. Run tournament
