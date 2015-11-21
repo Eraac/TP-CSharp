@@ -81,6 +81,7 @@ namespace TP0.Entity
 
         public float pourcentageVictory()
         {
+            // TODO Moyenne de la team ? Ou moyenne des gladiateurs ?
             float pourcentage = 0f;
 
             foreach(Gladiator gladiator in this._gladiators)
@@ -93,11 +94,23 @@ namespace TP0.Entity
             return pourcentage;
         }
 
-        public void addPlayedMatch(bool victory)
+        public void addPlayedMatch()
         {
+            this._nbMatchPlayed++;
+
             foreach (Gladiator gladiator in this._gladiators)
             {
-                gladiator.addMatch(victory);
+                gladiator.addMatch();
+            }
+        }
+
+        public void addVictory()
+        {
+            this._nbMatchWon++;
+
+            foreach (Gladiator gladiator in this._gladiators)
+            {
+                gladiator.addVictory();
             }
         }
 
@@ -128,3 +141,4 @@ namespace TP0.Entity
         }
     }
 }
+

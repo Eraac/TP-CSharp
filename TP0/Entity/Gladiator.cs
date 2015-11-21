@@ -86,17 +86,27 @@ namespace TP0.Entity
 
 		public float pourcentageVictory ()
 		{
-			return (this._nbMatchWon / this._nbMatchPlayed) * 100;
+            if (0 == this._nbMatchPlayed) {
+                return 0f;
+            } else {
+                return (this._nbMatchWon / this._nbMatchPlayed) * 100;
+            }
 		}
 
-		public void addMatch (bool isVictory = false)
+        public bool isAlive()
+        {
+            return (this._debuff is Dead);
+        }
+
+		public void addMatch ()
 		{
 			this._nbMatchPlayed++;
-
-			if (isVictory) {
-				this._nbMatchWon++;
-			}
 		}
+
+        public void addVictory ()
+        {
+            this._nbMatchWon++;
+        }
 
 		public bool isValid ()
 		{
