@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace TP0.Loader
 {
-    /*class TeamConverter : CustomCreationConverter<Team>
+    class TeamConverter : CustomCreationConverter<Team>
     {
         public override Team Create(Type objectType)
         {
@@ -17,16 +17,29 @@ namespace TP0.Loader
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            // Doc. http://www.newtonsoft.com/json/help/html/M_Newtonsoft_Json_Linq_JObject_Property.htm
+        {            
             JObject jsonObject = JObject.Load(reader);
-            var teams = jsonObject.Property("teams").ToList()[0];
 
-            Console.WriteLine(teams[1]);
-
-            return new Team();
+            return this.loadTeam(jsonObject, new Team());
         }
-    }*/
+
+        private Team loadTeam(JObject jsonObject, Team team)
+        {
+            team.name = jsonObject.Property("name").ToString();
+            team.description = jsonObject.Property("description").ToString();
+            team.nbMatchPlayed = uint.Parse(jsonObject.Property("nb_match_played").Value.ToString());
+            team.nbMatchWon = uint.Parse(jsonObject.Property("nb_match_won").Value.ToString());
+            dynamic gladiators = jsonObject.Property("gladiators").ToList()[0];
+
+            LoadGladiator loaderGladiator = new LoadGladiator();
+
+            foreach (string gladiator in gladiators) {
+                team.addGladiator(loaderGladiator.loadOne(gladiator));
+            }
+
+            return team;
+        }
+    }
 
     class LoadTeam
     {
@@ -35,14 +48,9 @@ namespace TP0.Loader
         public Team loadOne(string name)
         {
             // TODO check if file exists
-            /*string stringJson = File.ReadAllText("Assets/Team/" + name + ".json");
+            string stringJson = File.ReadAllText("Assets/Team/" + name + ".json");
 
-            return JsonConvert.DeserializeObject<Team>(stringJson, new TeamConverter());*/
-
-            Team team = new Team();
-            team.name = name;
-
-            return team;
+            return JsonConvert.DeserializeObject<Team>(stringJson, new TeamConverter());
         }
     }
 }
