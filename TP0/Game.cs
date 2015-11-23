@@ -19,6 +19,7 @@ namespace TP0
             // 2. Run tournament
             Tournament tournament = new Tournament(players);
             tournament.selectPools();
+            tournament.match();
         }
     }
 }
