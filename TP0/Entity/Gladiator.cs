@@ -2,6 +2,7 @@
 using TP0.Stuff;
 using TP0.Debuff;
 using System;
+using System.Collections.Generic;
 
 namespace TP0.Entity
 {
@@ -73,9 +74,19 @@ namespace TP0.Entity
 			return false;
 		}
 
+        public bool isFilet(SlotStuff slotStuff)
+        {
+            return (this._stuff.isFilet(slotStuff));
+        }
+
 		public uint chanceHit (SlotStuff slotStuff)
 		{
             uint chance = this._stuff.getTotalValueOfStatsForOnePiece(TypeStats.CHANCE_HIT, slotStuff);
+
+            if (this.isFilet(slotStuff)) {
+                this._stuff.deleteItem(slotStuff);
+            }
+
             return this._debuff.decreaseAttack(chance);
 		}
 
@@ -95,7 +106,21 @@ namespace TP0.Entity
 
         public bool isAlive()
         {
-            return (this._debuff is Dead);
+            return !(this._debuff is Dead);
+        }
+
+        public List<SlotStuff> getSlotByStats(TypeStats stats)
+        {
+            List<SlotStuff> hitItems = new List<SlotStuff>();
+            var slots = Enum.GetValues(typeof(SlotStuff));
+
+            foreach(SlotStuff slot in slots) {
+                if (0 != this._stuff.getTotalValueOfStatsForOnePiece(stats, slot)) {
+                    hitItems.Add(slot);
+                }
+            }
+
+            return hitItems;
         }
 
 		public void addMatch ()
