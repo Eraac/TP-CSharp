@@ -27,7 +27,7 @@ namespace TP0.Loader.Factory
 
         private Item createSmallShield()
         {
-            Item armor = new Item("Petit boucler rond", 5, Stuff.TypeStuff.ARMOR);
+            Item armor = new Item("Petit boucler rond", 5, (uint)ListArmor.SMALL_SHIELD, Stuff.TypeStuff.ARMOR);
             armor.addStats(new Stats(20, Stuff.TypeStats.CHANCE_PARRY));
 
             return armor;
@@ -35,7 +35,7 @@ namespace TP0.Loader.Factory
 
         private Item createTallShield()
         {
-            Item armor = new Item("Bouclier rectangulaire", 8, Stuff.TypeStuff.ARMOR);
+            Item armor = new Item("Bouclier rectangulaire", 8, (uint)ListArmor.TALL_SHIELD, Stuff.TypeStuff.ARMOR);
             armor.addStats(new Stats(30, Stuff.TypeStats.CHANCE_PARRY));
 
             return armor;
@@ -43,7 +43,7 @@ namespace TP0.Loader.Factory
 
         private Item createHelmet()
         {
-            Item armor = new Item("Casque", 2, Stuff.TypeStuff.ARMOR);
+            Item armor = new Item("Casque", 2, (uint)ListArmor.HELMET, Stuff.TypeStuff.ARMOR);
             armor.addStats(new Stats(10, Stuff.TypeStats.CHANCE_PARRY));
 
             return armor;
