@@ -17,10 +17,13 @@ namespace TP0.Gameplay
 
         public void selectPools()
         {
+			Console.WriteLine("Selection des équipes");
+
             List<Team> teams = new List<Team>();
 
             foreach(Player player in this._players)
             {
+				Console.WriteLine("Ajout du joueur : " + player.name);
                 teams.Add(player.teams[0]); // TODO : ajouter vérification
             }
 
@@ -36,6 +39,9 @@ namespace TP0.Gameplay
                 }
 
                 Pool pool = new Pool(teams[i], teams[i + 1]);
+
+				Console.WriteLine("Création de la pool : " + pool);
+
                 this._pools.Add(pool);
             }
         }
@@ -44,11 +50,15 @@ namespace TP0.Gameplay
         {
             foreach(Pool pool in this._pools)
             {
+				Console.WriteLine("Lancement du match : " + pool);
                 Team team = pool.match();
 
-                if (null != team) {
-                    team.addVictory();
-                }
+				if (null != team) {
+					Console.WriteLine (team.name + " est gagnante !");
+					team.addVictory ();
+				} else {
+					Console.WriteLine("Aucune équipe gagnante");
+				}
             }
         }
 

@@ -50,8 +50,11 @@ namespace TP0.Gameplay
 
                 if (this.diceRool(chanceHit))
                 {
+					Console.WriteLine(attacker.name + " réussi son attaque contre " + defenser.name); 
                     // Le filet ne peut pas être parré
-                    if (attacker.isFilet(slotForHit)) {
+                    if (attacker.isFilet(slotForHit)) 
+					{
+						Console.WriteLine(attacker.name + " lance le filet et réussi");
                         return Hit.TRAPPED;
                     }
 
@@ -59,13 +62,18 @@ namespace TP0.Gameplay
                     {
                         uint chanceParry = defenser.chanceParry(slotForParry);
 
-                        if (this.diceRool(chanceParry)) {
+                        if (this.diceRool(chanceParry)) 
+						{
+							Console.WriteLine(defenser.name + " rate la parade");
                             return Hit.TOUCH;
                         }
                     }
+
+					Console.WriteLine(defenser.name + " réussi la parade");
                 }
             }
 
+			Console.WriteLine(attacker.name + " rate son coup");
             return Hit.NOPE;
         }
 

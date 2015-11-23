@@ -65,5 +65,10 @@ namespace TP0.Gameplay
 
             return null;
         }
+
+		public override string ToString ()
+		{
+			return this._teamA.name + " vs " + this._teamB.name;
+		}
     }
 }
