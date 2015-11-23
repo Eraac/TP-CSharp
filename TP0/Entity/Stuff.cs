@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TP0.Stuff;
+using TP0.Stuff.Weapon;
 
 namespace TP0.Entity
 {
@@ -60,6 +61,18 @@ namespace TP0.Entity
 		{
 			return (this.hasItem(SlotStuff.WEAPON_LEFT_HAND) || this.hasItem(SlotStuff.WEAPON_RIGHT_HAND));
 		}
+
+        public bool isFilet(SlotStuff slotStuff)
+        {
+            return (this.hasItem(slotStuff) && this._items[slotStuff].id == (uint)ListWeapon.FILET);                
+        }
+
+        public void deleteItem(SlotStuff slotStuff)
+        {
+            if (this.hasItem(slotStuff)) {
+                this._items.Remove(slotStuff);
+            }
+        }
 
 		public override string ToString ()
 		{
