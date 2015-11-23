@@ -9,6 +9,7 @@ namespace TP0.Entity
 		private List<Stats> _stats;
 		private string _name;
 		private uint _cost;
+        private uint _idItem;
 		private TypeStuff _typeStuff;
 
 		public TypeStuff typeStuff 
@@ -32,11 +33,19 @@ namespace TP0.Entity
 			}
 		}
 
-		public Item (string name, uint cost, TypeStuff typeStuff)
+        public uint id
+        {
+            get {
+                return this._idItem;
+            }
+        }
+
+        public Item (string name, uint cost, uint idItem, TypeStuff typeStuff)
 		{
 			this._stats = new List<Stats> ();
 			this._name = name;
 			this._cost = cost;
+            this._idItem = idItem;
 			this._typeStuff = typeStuff;
 		}
 
